@@ -9,7 +9,7 @@ class Bayraklardao{
 
     return List.generate(maps.length, (i){
       var satir=maps[i];
-      return Bayraklar(satir["bayrak_adi"], satir["bayrak_adi"], satir["bayrak_resim"]);
+      return Bayraklar(satir["bayrak_id"], satir["bayrak_adi"], satir["bayrak_resim"]);
 
     });
 
@@ -22,10 +22,9 @@ class Bayraklardao{
 
     return List.generate(maps.length, (i){
       var satir=maps[i];
-      return Bayraklar(satir["bayrak_adi"], satir["bayrak_adi"], satir["bayrak_resim"]);
+      return Bayraklar(satir["bayrak_id"], satir["bayrak_adi"], satir["bayrak_resim"]);
 
     });
-
-
   }
+
 }

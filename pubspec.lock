@@ -103,7 +103,7 @@ packages:
     source: hosted
     version: "1.7.0"
   path:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: path
       url: "https://pub.dartlang.org"
@@ -122,7 +122,7 @@ packages:
     source: hosted
     version: "1.8.2"
   sqflite:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: sqflite
       url: "https://pub.dartlang.org"

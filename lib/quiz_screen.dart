@@ -29,12 +29,19 @@ class _QuizScreenState extends State<QuizScreen> {
   String buttonC="";
   String buttonD="";
 
+
+  @override
+  void initState() {
+    super.initState();
+    sorulariAl();
+  }
+
   Future<void> sorulariAl() async{
     sorular = await Bayraklardao().rastgeleBayrak();
     soruYukle();
   }
   Future<void> soruYukle() async{
-    dogruSoru=sorular[dogruSayac];
+    dogruSoru=sorular[soruSayac];
     bayrakResimAdi = dogruSoru.bayrak_resim;
 
     yanlisSorular = await Bayraklardao().yanlisBayrak(dogruSoru.bayrak_id);
@@ -51,7 +58,6 @@ class _QuizScreenState extends State<QuizScreen> {
     buttonD=tumSecenekler.elementAt(3).bayrak_adi;
 
     setState((){
-
     });
   }
 
@@ -74,11 +80,6 @@ class _QuizScreenState extends State<QuizScreen> {
     }
   }
 
-  @override
-  void initState() {
-     sorulariAl();
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,8 +176,6 @@ class _QuizScreenState extends State<QuizScreen> {
                     onPressed:(){
                       dogruKontrol(buttonA);
                       soruSayacKontrol();
-
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ResultsScreen(dogruSayisi: 8,)));
                     },
                   ),
                 ),
