@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
 
@@ -33,43 +33,49 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFed6a5a),
-        title: Text("Bayrak Quiz Oyunu"),
+        backgroundColor: const Color(0xFFed6a5a),
+        title: const Text("Bayrak Quiz Oyunu"),
         centerTitle: true,
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text("Bayrak Tahmin Oyunu!",
+
+            SizedBox(
+              width: 200,
+                child: Image.asset("images/question.png")
+            ),
+
+            const Text("Bayrak Tahmin Oyunu!",
             style: TextStyle(
               fontSize: 35.0,
               color: Color(0xFFed6a5a),
 
             ),
+
             ),
-            SizedBox(
-              height: 50,
-            ),
+
+            
             SizedBox(
               width: 200,
               height: 50,
               child: ElevatedButton(
-                child: Text("Oyuna Başla", style: TextStyle(
+                child: const Text("Oyuna Başla", style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0))
                   ),
-                  primary: Color(0xFFed6a5a),
-                  shadowColor: Color(0xFFed6a5a),
+                  primary: const Color(0xFFed6a5a),
+                  shadowColor: const Color(0xFFed6a5a),
                   elevation: 10.0,
                 ),
                 onPressed:(){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuizScreen()));
                 },
               ),
             ),

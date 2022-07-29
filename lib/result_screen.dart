@@ -12,7 +12,8 @@ class _ResultsScreenState extends State<ResultsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sonuç Ekranı"),
+        title: const Text("Sonuç Ekranı"),
+        backgroundColor: const Color(0xFFed6a5a),
         centerTitle: true,
       ),
     );
